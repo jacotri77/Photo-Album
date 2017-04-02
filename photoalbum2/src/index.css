@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Exo+2')
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after{
+	box-sizing: inherit;
+}
+
+
+*{
+	font-family: 'Exo 2', sans-serif;
+}
+
+#containerz, #ind_container, #containerAlbum{
+	height:1600px;
+	width:1440px;
+	margin: auto;
+	border:1px solid #96a3ba;
+}
+
+#ind_container{
+	display: block;
+	text-align: center;
+}
+
+#homeHeader, #leftNav{
+	background-color: #121e33;
+	border:1px solid #96a3ba;
+	color: #96a3ba;
+	text-align:center;
+}
+#homeHeader{
+	height:100px;
+	line-height: 50px;
+}
+
+#albumHeader, #albumHeader h1{
+	height: 100px;
+	margin: 0px;
+	color:#96a3ba;
+	text-align: center;
+	background-color: #121e33;
+}
+#albumHeader{
+	line-height: 100px;
+}
+
+#bigAlbums{
+	width:600px;
+	height:600px;
+	display: inline-block;
+	margin: auto;
+	position:relative;
+	top:40px;
+	left:100px;
+	text-align: center;
+	color:#96a3ba;
+	background-color: #121e33;
+}
+
+#leftNav{
+	height:1400px;
+	width:25%;
+	display: inline-block;
+	float: left;
+	clear: left;
+	text-align: left;
+	list-style: none;
+	border:none;
+}
+#leftNav ul{
+	width:300px;
+	padding-left: 0px;
+	margin:auto;
+	text-align: center;
+}
+
+#leftNav li{
+	list-style: none;
+	margin: auto;
+}
+
+#leftNav button{
+	width:250px;
+	height:45px;
+	background-color: transparent;
+	color: #96a3ba;
+	margin: 25px auto;
+	text-align: center;
+	outline:0px;
+	border:1px solid #96a3ba;
+	cursor:crosshair;
+}
+#leftNav button:active{
+	outline:2px solid #5b4912;
+}
+#homeAlbums{
+	display: block;
+	width:1200px;
+	height: 1400px;
+	margin: auto;
+	text-align: center;
+}
+#homeAlbums div{
+	margin: 20px 30px;
+	color:#96a3ba;
+	background-color: #121e33;
+	line-height: 45px;
+}
+
+.PhotosAlb{
+	display: inline-block;
+	margin:auto;
+	width:300px;
+	height: 375px;
+	color:#96a3ba;
+	border:1px solid black;
+	text-decoration: none;
+}
+
+span{
+	display: block;
+	text-decoration: none;
+	color:#96a3ba;
+}
+
+
+#bottomBorder{
+	width: 100%;
+	height: 100px;
+	background-color: #121e33;
+	float: left;
+	clear: both;
+}

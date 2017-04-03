@@ -15,7 +15,7 @@ render() {
               Data.map(item=>{
               return (
                 <div className="PhotosAlb" key={item.albumId}>
-                <Link to={'/albums'+ item.albumName} >
+                <Link to={'/album/'+ item.albumName} >
                   <img src={item.coverPicture} id="coverPhotoz" alt="#"/>
                   <span id="albName">{item.albumName}</span>
                 </Link>

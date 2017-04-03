@@ -16,7 +16,7 @@ import Album from './album.js'
       </ul>
       
       <Route exact={true} path="/" component={Albums}/>
-      <Route path="/album" component={Album} />
+      <Route path="/album/:albumName" component={Album} />
       
     </div>
       </BrowserRouter>

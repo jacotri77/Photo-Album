@@ -4,7 +4,13 @@ import './index.css';
 import Data from './data.json'
 
 export default React.createClass({
- 
+//  getInitialState(){
+//    return {
+//     photoAlbum: Data.filter(photo=>{
+//       return photo.albumName = this.props.match.params.albumName
+//     })
+//    }
+//  },
 
   render(){
     return (
@@ -12,29 +18,37 @@ export default React.createClass({
         <div id="albumHeader">
           <h1>Album Name</h1>
         </div>
-        <div id="bigAlbums">
-          <img src="https://source.unsplash.com/random/600x480" alt="#"id="albumImage"/> 
-          <h2 id="albumH2">Album Name</h2>
-        </div>
-        <div id='leftNav'>
+        
         {
+          Data.filter(photo=>{
+            for(var i = 0; i < photo.length ; i++){
+            if(photo.photos.picture === this.props.match.params.albumName){
+              return (
+             <div>
+             <Link to={'/photo/:' + photo.picture}><img src={photo.albumName} alt="#"id="albumImage"/>
+             </Link>
+            </div>
+          )
+         
+        }}})}
+
        
+        <div id='leftNav'>
+         <ul>
+        {
            Data.map(item=>{
             return(   
-            <ul>
               <li key={item.albumId}>
-                <Link to={'/album'+ item.albumName}>
+                <Link to={'/album/' + item.albumName}>
                   <button>{item.albumName}</button>
                 </Link>
               </li>
-            </ul>
-              
               )
             })}
-         
+          </ul>
+        </div> 
         <div id="bottomBorder">
         </div> 
-        </div>
       </div>
     )
   }

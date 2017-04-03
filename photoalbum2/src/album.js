@@ -4,13 +4,10 @@ import './index.css';
 import Data from './data.json'
 
 export default React.createClass({
-//  getInitialState(){
-//    return {
-//     photoAlbum: Data.filter(photo=>{
-//       return photo.albumName = this.props.match.params.albumName
-//     })
-//    }
-//  },
+    brokeBack(e){
+    e.preventDefault()
+    this.props.history.goBack()
+  },
 
   render(){
     return (
@@ -21,20 +18,20 @@ export default React.createClass({
         
         {
           Data.filter(photo=>{
-            for(var i = 0; i < photo.length ; i++){
             if(photo.photos.picture === this.props.match.params.albumName){
               return (
              <div>
-             <Link to={'/photo/:' + photo.picture}><img src={photo.albumName} alt="#"id="albumImage"/>
+             <Link to={'/photo/:' + photo.photos.picture}><img src={photo.photos.picture} alt="#"id="albumImage"/>
              </Link>
             </div>
           )
          
-        }}})}
+        }})}
 
        
         <div id='leftNav'>
          <ul>
+          <button id="backers" onClick={this.brokeBack}>Home</button>
         {
            Data.map(item=>{
             return(   

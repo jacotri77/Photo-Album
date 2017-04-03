@@ -9,6 +9,26 @@ export default React.createClass({
     this.props.history.goBack()
   },
 
+  picFilter(){
+    var newArray = Data.filter(item=>{
+       if(item.albumName === this.props.match.params.albumName){
+        return this.props.match.params.albumName
+      }
+    })[0] 
+    console.log(newArray)
+    return newArray
+  },
+  photoFilter(){
+  var albumPhoto = this.state.newArray.filter(photo=>{
+      console.log('hi', albumPhoto)
+      return Number(photo.id) === Number(this.props.match.params.id)
+    }) 
+    this.setState({
+    photo: photo[0]
+    
+  })
+  },
+
   render(){
     return (
       <div id="containerAlbum">
@@ -17,21 +37,18 @@ export default React.createClass({
         </div>
         
         {
-          Data.filter(photo=>{
-            if(photo.photos.picture === this.props.match.params.albumName){
+          this.picFilter().map(photo=>{
               return (
-             <div>
-             <Link to={'/photo/:' + photo.photos.picture}><img src={photo.photos.picture} alt="#"id="albumImage"/>
+             <div key={photo.albumId}>
+             <Link to={'/photo/:' + photo.photos}><img src={photo.picture} alt="#"id="albumImage"/>
              </Link>
             </div>
-          )
+          )})
          
-        }})}
-
-       
+        })
         <div id='leftNav'>
          <ul>
-          <button id="backers" onClick={this.brokeBack}>Home</button>
+          <button id="backers" onClick={this.brokeBack}>Back</button>
         {
            Data.map(item=>{
             return(   
@@ -45,6 +62,7 @@ export default React.createClass({
           </ul>
         </div> 
         <div id="bottomBorder">
+        <span id="ironDev">&copy; ironDev</span>
         </div> 
       </div>
     )

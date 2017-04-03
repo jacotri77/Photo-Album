@@ -15,14 +15,14 @@ render() {
               Data.map(item=>{
               return (
                 <div className="PhotosAlb" key={item.albumId}>
-                <Link to={'/album/'+ item.albumName} >
-                  <img src={item.coverPicture} id="coverPhotoz" alt="#"/>
+                <Link to={'/album/'+ item.albumName}><img src={item.coverPicture} id="coverPhotoz" alt="#"/>
                   <span id="albName">{item.albumName}</span>
                 </Link>
-                </div>
+              </div>
             )})}
           </div>
         <div id="bottomBorder">
+        <span id="ironDev">&copy; ironDev</span>
       </div>   
     </div>
 	)

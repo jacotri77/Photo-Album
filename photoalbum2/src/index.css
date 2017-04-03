@@ -119,6 +119,9 @@ html {
 	border:1px solid black;
 	text-decoration: none;
 }
+#coverPhotoz{
+	text-decoration: none;
+}
 
 span{
 	display: block;
@@ -169,6 +172,14 @@ span{
 	outline: 1px solid rgb(109,162,39);
 }
 
+.PhotosAlb a:link, .PhotosAlb a:visited, .PhotosAlb a:hover,.PhotosAlb a:active{
+	color:#96a3ba;
+	text-decoration: none;
+}
 
+#ironDev{
+	margin-left: 30px;
+	line-height: 100px; 
+}
 
 

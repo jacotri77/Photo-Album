@@ -16,7 +16,7 @@ export default React.createClass({
       </div>
 		    <img src="https://source.unsplash.com/random/1280x1024" alt="#" id="indPicture"/>    
       <div id="bottomBorder">
-      <span id="ironDev">&copy; ironDev</span>
+      <span id="ironDev">&copy; jitteryBastard</span>
       </div>
     </div> 
 

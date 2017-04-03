@@ -22,7 +22,7 @@ render() {
             )})}
           </div>
         <div id="bottomBorder">
-        <span id="ironDev">&copy; ironDev</span>
+        <span id="ironDev">&copy; jitteryBastard</span>
       </div>   
     </div>
 	)

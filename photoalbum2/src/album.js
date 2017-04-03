@@ -4,29 +4,18 @@ import './index.css';
 import Data from './data.json'
 
 export default React.createClass({
-    brokeBack(e){
-    e.preventDefault()
-    this.props.history.goBack()
+  getInitialState() {
+    return {
+      photos: Data.filter(album=>{
+        return album.albumName === this.props.match.params.albumName
+      })[0].photos,
+      albums: Data
+    }
   },
 
-  picFilter(){
-    var newArray = Data.filter(item=>{
-       if(item.albumName === this.props.match.params.albumName){
-        return this.props.match.params.albumName
-      }
-    })[0] 
-    console.log(newArray)
-    return newArray
-  },
-  photoFilter(){
-  var albumPhoto = this.state.newArray.filter(photo=>{
-      console.log('hi', albumPhoto)
-      return Number(photo.id) === Number(this.props.match.params.id)
-    }) 
-    this.setState({
-    photo: photo[0]
-    
-  })
+  brokeBack(e){
+    e.preventDefault()
+    this.props.history.goBack()
   },
 
   render(){
@@ -35,22 +24,21 @@ export default React.createClass({
         <div id="albumHeader">
           <h1>Album Name</h1>
         </div>
-        
-        {
-          this.picFilter().map(photo=>{
-              return (
-             <div key={photo.albumId}>
-             <Link to={'/photo/:' + photo.photos}><img src={photo.picture} alt="#"id="albumImage"/>
-             </Link>
+        <div id="albumContainer">
+        {this.state.photos.map(photo=>{
+          console.log(photo)
+          return (
+            <div key={"photo" + photo.id} id="photoWrap">
+              <Link to={'/photo/' + photo.id}><img src={photo.picture} alt="#"id="albumImage"/></Link>
             </div>
-          )})
-         
-        })
+          )
+        })}
+        </div>
         <div id='leftNav'>
          <ul>
           <button id="backers" onClick={this.brokeBack}>Back</button>
         {
-           Data.map(item=>{
+           this.state.albums.map(item=>{
             return(   
               <li key={item.albumId}>
                 <Link to={'/album/' + item.albumName}>
@@ -62,7 +50,7 @@ export default React.createClass({
           </ul>
         </div> 
         <div id="bottomBorder">
-        <span id="ironDev">&copy; ironDev</span>
+        <span id="ironDev">&copy; jitteryBastard</span>
         </div> 
       </div>
     )

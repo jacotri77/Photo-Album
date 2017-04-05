@@ -4,10 +4,10 @@ import Data from './data.json'
 
 export default React.createClass({
     getInitialState(){
-      this.state ={
-        photo: Data.photos.filter(photo=>{
-          return (photos.photo.id) === (this.props.match.photos.photo.id)
-        })[0]
+      return {
+        photo: Data.filter(photo=>{
+          return (photo.id) === (this.props.match.params.photosId)
+        })[0],
       }
     },
 

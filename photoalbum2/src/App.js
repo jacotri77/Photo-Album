@@ -12,7 +12,7 @@ import Photo from './photo.js'
         <div>
           <Route exact={true} path="/" component={Albums}/>
           <Route path="/album/:albumName" component={Album} />
-          <Route path="/photo/:photos.id" component={Photo} />
+          <Route path="/photo/:photosID" component={Photo} />
         </div>
       </BrowserRouter>
     )

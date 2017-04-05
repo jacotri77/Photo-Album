@@ -18,11 +18,16 @@ export default React.createClass({
     this.props.history.goBack()
   },
 
+  showPhotos(e){
+    e.preventDefault()
+    this.props.match.params.albumName()
+  },
+
   render(){
     return (
       <div id="containerAlbum">
         <div id="albumHeader">
-          <h1>Album Name</h1>
+          <h1>{this.props.match.params.albumName}</h1>
         </div>
         <div id="albumContainer">
         {this.state.photos.map(photo=>{
@@ -42,7 +47,7 @@ export default React.createClass({
             return(   
               <li key={item.albumId}>
                 <Link to={'/album/' + item.albumName}>
-                  <button>{item.albumName}</button>
+                  <button onClick={item.albumName}>{item.albumName}</button>
                 </Link>
               </li>
               )

@@ -185,15 +185,19 @@ span{
 	width:300px;
 	height: 375px;
 	color:#96a3ba;
+
 	border:1px solid black;
 	text-decoration: none;
 	display:inline-block;
 
 }
+#photoWrap{
+	margin: 30px 15px 0px 15px;
+}
 
 #albumContainer{
 	height: 1000px;
-	width: 70%;
+	width: 73%;
 	display:inline-block;
 	float: right;
 	margin: auto;

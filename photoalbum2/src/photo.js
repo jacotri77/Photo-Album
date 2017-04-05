@@ -1,11 +1,19 @@
-import React from 'react';
-import './index.css';
-// import Data from './data.json'
+import React from 'react'
+import './index.css'
+import Data from './data.json'
 
 export default React.createClass({
+    getInitialState(){
+      this.state ={
+        photo: Data.photos.filter(photo=>{
+          return (photos.photo.id) === (this.props.match.photos.photo.id)
+        })[0]
+      }
+    },
+
     brokeBack(e){
-    e.preventDefault()
-    this.props.history.goBack()
+      e.preventDefault()
+      this.props.history.goBack()
   },
 
   render(){
@@ -14,7 +22,9 @@ export default React.createClass({
       <div id="indPhoto"> 
         <button id="backers" onClick={this.brokeBack}>Back</button>
       </div>
-		    <img src="https://source.unsplash.com/random/1280x1024" alt="#" id="indPicture"/>    
+        <div key={"photo" + this.state.photo.id} id="photoWrap">
+          <img src={this.state.photo.picture} alt="#"id="indPicture"/>
+        </div>
       <div id="bottomBorder">
       <span id="ironDev">&copy; jitteryBastard</span>
       </div>

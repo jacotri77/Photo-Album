@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "redux": "^4.0.5"
+    "redux": "^4.1.0"
   }
 }
